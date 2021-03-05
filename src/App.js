@@ -7,7 +7,6 @@ const App = () => {
     <div className="container" style={{ width: "600px" }}>
       <div className="my-3">
         <h3>Cargo</h3>
-        <h4>File Upload</h4>
       </div>
 
       <FileUpload />
