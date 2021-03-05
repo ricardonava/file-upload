@@ -1,9 +1,10 @@
 import http from "../http-common";
 
-const upload = (file, onUploadProgress) => {
+export const upload = (file, userToken, onUploadProgress) => {
   let formData = new FormData();
 
-  formData.append("file", file);
+  formData.append("image", file);
+  formData.append("user-token", userToken);
 
   return http.post("/upload", formData, {
     headers: {
@@ -13,11 +14,6 @@ const upload = (file, onUploadProgress) => {
   });
 };
 
-const getFiles = () => {
+export const getFiles = () => {
   return http.get("/files");
-};
-
-export default {
-  upload,
-  getFiles,
 };
